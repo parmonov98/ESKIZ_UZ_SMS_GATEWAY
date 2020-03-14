@@ -94,7 +94,7 @@ class Eskiz{
 			// by default oauth token is set up in every request's header
 			if($type !== 'oauth'){
 				$headers = array(
-					sprintf('Authorization: Bearer %s', SMS_GATEWAY_TOKEN)
+					sprintf('Authorization: Bearer %s', $this->token)
 				);
 				curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 			}
