@@ -71,7 +71,7 @@ class Eskiz{
 		$output = $this->sendPing([], 'message/sms/get/status/' . $sms_id);
 		// print_r($output);
 		if($output['status'] === 'success' AND $output['message']['status'] === 'Delivered'  ){
-			$output = (int)$output['message']['id'];
+			$output = $output['message']['status'];
 		}
 		return $output;
 	}
